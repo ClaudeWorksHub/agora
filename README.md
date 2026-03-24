@@ -124,8 +124,8 @@ Phase 1: Generate initial proposal
               ↓
 Phase 2: Multi-round discussion (max N rounds)
          多轮讨论（最多 N 轮）
-         ┌─→ Each role reviews proposal sequentially
-         │   各角色依次审视方案
+         ┌─→ Each role reviews proposal (parallel recommended, serial fallback)
+         │   各角色审视方案（推荐并行，串行兜底）
          │        ↓
          │   Main Claude responds to objections
          │   主 Claude 逐一回应异议
@@ -141,8 +141,9 @@ Phase 3: Final proposal with self-review
 ### Convergence rules / 收敛规则
 
 - Rounds 1-3: Deep review encouraged — each role reviews from at least 3 dimensions (can be no-objection with dimension list)
-- Round 4+: Converge when all roles + main Claude agree
-- Hard limit: Stop at `--max-rounds` with best current proposal
+- Round 4+: Converge when all active roles have no objections for 2 consecutive rounds (structural rule, main Claude cannot override)
+- Grep cross-check: Before convergence, verify status from file matches parsed results
+- Hard limit: Stop at `--max-rounds` with best current proposal + unresolved issues listed
 
 ## Git handling / Git 处理建议
 
