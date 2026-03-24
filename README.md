@@ -121,7 +121,7 @@ Phase 3: Final proposal with self-review
 
 ### Convergence rules / 收敛规则
 
-- Rounds 1-3: Forced deep review — each role must raise at least 1 objection
+- Rounds 1-3: Deep review encouraged — each role reviews from at least 3 dimensions (can be no-objection with dimension list)
 - Round 4+: Converge when all roles + main Claude agree
 - Hard limit: Stop at `--max-rounds` with best current proposal
 
