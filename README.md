@@ -19,8 +19,27 @@
 
 ### From marketplace / 市场安装
 
+In Claude Code, run the following commands:
+
+在 Claude Code 中依次执行：
+
 ```bash
-claude plugins install huashanlunjian
+# 1. Add marketplace / 添加市场
+/plugin marketplace add sunfjun/huashanlunjian
+
+# 2. Install plugin / 安装插件
+/plugin install huashanlunjian@huashanlunjian
+
+# 3. Activate / 激活
+/reload-plugins
+```
+
+To update to the latest version / 更新到最新版本：
+
+```bash
+/plugin marketplace update huashanlunjian
+/plugin install huashanlunjian@huashanlunjian
+/reload-plugins
 ```
 
 ### Local development / 本地安装
