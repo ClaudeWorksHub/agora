@@ -28,7 +28,7 @@ In Claude Code, run the following commands:
 /plugin marketplace add ClaudeWorksHub/claude-plugins
 
 # 2. Install plugin / 安装插件
-/plugin install huashanlunjian@claude-plugins
+/plugin install huashanlunjian@claudeworkshub
 
 # 3. Activate / 激活
 /reload-plugins
@@ -37,8 +37,8 @@ In Claude Code, run the following commands:
 To update to the latest version / 更新到最新版本：
 
 ```bash
-/plugin marketplace update huashanlunjian
-/plugin install huashanlunjian@claude-plugins
+/plugin marketplace update claudeworkshub
+/plugin install huashanlunjian@claudeworkshub
 /reload-plugins
 ```
 
