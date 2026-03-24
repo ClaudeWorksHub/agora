@@ -25,10 +25,10 @@ In Claude Code, run the following commands:
 
 ```bash
 # 1. Add marketplace / 添加市场
-/plugin marketplace add sunfjun/huashanlunjian
+/plugin marketplace add ClaudeWorksHub/claude-plugins
 
 # 2. Install plugin / 安装插件
-/plugin install huashanlunjian@huashanlunjian
+/plugin install huashanlunjian@claude-plugins
 
 # 3. Activate / 激活
 /reload-plugins
@@ -38,7 +38,7 @@ To update to the latest version / 更新到最新版本：
 
 ```bash
 /plugin marketplace update huashanlunjian
-/plugin install huashanlunjian@huashanlunjian
+/plugin install huashanlunjian@claude-plugins
 /reload-plugins
 ```
 
