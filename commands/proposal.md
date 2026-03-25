@@ -82,8 +82,7 @@ Wait for user confirmation before entering Phase 1.
    - Potential risks
 
 3. **Create discussion file**:
-   - Use Bash to create `proposals/` directory if it doesn't exist: `mkdir -p proposals`
-   - Use Write tool to create `proposals/proposal-<YYYYMMDD-HHmmss>.md`
+   - Use the Write tool to create `proposals/proposal-<YYYYMMDD-HHmmss>.md` (the Write tool will create the directory if needed)
    - Write file header metadata + initial proposal
 
 Initial file template:
@@ -190,17 +189,14 @@ a) **Parse first** (based on Agent's raw response, not file content):
    - Missing summary → use first 100 chars of response
    - If a role marks "No objection" but the response contains words like "suggest"/"however"/"but", flag as "⚠️ soft objection" in progress output
 
-b) **Write to discussion file** (append with Bash `cat >> file`, no EOF anchor):
+b) **Write to discussion file** using the Edit tool to append at the end of the file. Find the last line of the file and append after it. Content to append:
 
-```bash
-cat >> proposals/proposal-<timestamp>.md << '_HLJI_APPEND_END_'
-
+```
 ### {emoji} {role name} ({role perspective}):
 **Status: {status}** (raw: "{raw status line from role's response}")
 {role response body, minus the ## Status:/## Key Points:/## Summary: lines}
 **Key Points:** {bullet list}
 **Summary:** {summary}
-_HLJI_APPEND_END_
 ```
 
 **Step 2 — Main Claude responds and updates**
@@ -214,7 +210,7 @@ a) Respond to each objection one by one (accept/reject with reasoning), and revi
 
 b) **If the proposal involves modifying code files (such as the proposal.md itself or agent files), accepted changes must be immediately applied to the actual files.**
 
-c) Append main Claude's response to the discussion file with Bash `cat >> file`:
+c) Append main Claude's response to the discussion file using the Edit tool (append at end of file):
 
 ```
 ---
