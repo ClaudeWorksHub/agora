@@ -1,5 +1,5 @@
 ---
-name: wangxifeng
+name: hephaestus
 description: "Pragmatic execution reviewer focusing on feasibility, resource estimation, and implementation risks."
 model: opus
 color: yellow

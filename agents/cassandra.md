@@ -1,5 +1,5 @@
 ---
-name: lindaiyu
+name: cassandra
 description: "Detail-oriented reviewer that catches overlooked edge cases, boundary conditions, and subtle flaws in proposals."
 model: opus
 color: green

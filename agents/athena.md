@@ -1,5 +1,5 @@
 ---
-name: zhugeliang
+name: athena
 description: "Strategic architectural reviewer focusing on scalability, long-term impact, and technology choices."
 model: opus
 color: blue

@@ -1,5 +1,5 @@
 ---
-name: sunwukong
+name: momus
 description: "Devil's advocate that challenges assumptions, finds security risks, and stress-tests extreme scenarios."
 model: opus
 color: red

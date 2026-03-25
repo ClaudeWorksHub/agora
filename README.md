@@ -8,10 +8,12 @@
 
 华山论剑让多个AI角色从不同视角审视你的方案，通过多轮讨论打磨出更完善的 Proposal。
 
-- 🌸 **林黛玉** — 细节洞察：发现被忽略的边界条件和潜在隐患
-- 🌟 **诸葛亮** — 战略架构：从全局和长远角度审视设计
-- 🐒 **孙悟空** — 魔鬼代言人：挑战假设，找出安全风险和极端场景
-- 💰 **王熙凤** — 落地执行：关注可行性、资源和进度风险
+- 🎭 **Momus** — Devil's advocate: challenges assumptions, finds security risks and extreme scenarios
+- 🔮 **Cassandra** — Detail insight: catches overlooked edge cases, boundary conditions and subtle flaws
+- 🦉 **Athena** — Strategic architecture: reviews global design, scalability and long-term impact
+- ⚒️ **Hephaestus** — Execution feasibility: evaluates implementability, resources and schedule risks
+
+> *"Symposion 召集了四种不可替代的视角——批评之眼、先知之声、战略之断、匠人之手——各司其职，只问能力，不问出身。"*
 
 讨论自动进行，直到所有角色达成共识（最多 N 轮），全过程写入文件供查阅。
 
@@ -63,14 +65,14 @@ Or configure the plugin path in your project's `.claude/settings.local.json`.
 ### Select roles / 选择角色
 
 ```
-/proposal --roles 诸葛亮,孙悟空 设计一个缓存系统
-/proposal --roles zhugeliang,sunwukong Design a caching system
+/proposal --roles athena,momus 设计一个缓存系统
+/proposal --roles athena,momus Design a caching system
 ```
 
 ### Exclude roles / 排除角色
 
 ```
-/proposal --exclude 王熙凤 设计一个通知系统
+/proposal --exclude hephaestus 设计一个通知系统
 ```
 
 ### Set max rounds / 设置最大轮数
@@ -82,25 +84,25 @@ Or configure the plugin path in your project's `.claude/settings.local.json`.
 ### Combined / 组合使用
 
 ```
-/proposal --roles 林黛玉,诸葛亮 --max-rounds 8 设计一个API网关
+/proposal --roles cassandra,athena --max-rounds 8 设计一个API网关
 ```
 
 ## Parameters / 参数
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `--roles` | All 4 roles | Comma-separated role names (Chinese or pinyin) |
+| `--roles` | All 4 roles | Comma-separated role names (or legacy aliases) |
 | `--exclude` | None | Exclude specific roles |
 | `--max-rounds` | 10 | Max discussion rounds (1-20) |
 
-### Role name mapping / 角色名映射
+### Role names / 角色名
 
-| Chinese | Pinyin | Perspective |
-|---------|--------|-------------|
-| 林黛玉 | lindaiyu | Detail & edge cases |
-| 诸葛亮 | zhugeliang | Strategy & architecture |
-| 孙悟空 | sunwukong | Devil's advocate |
-| 王熙凤 | wangxifeng | Execution & feasibility |
+| Name | Legacy alias | Perspective |
+|------|-------------|-------------|
+| `momus` | `sunwukong` | Devil's advocate |
+| `cassandra` | `lindaiyu` | Detail & edge cases |
+| `athena` | `zhugeliang` | Strategy & architecture |
+| `hephaestus` | `wangxifeng` | Execution & feasibility |
 
 ## Output / 输出文件
 
@@ -166,7 +168,7 @@ v1 ships with 4 built-in roles. The format is open for future custom roles:
 Discussions follow the language of your task description:
 - Chinese task → Chinese discussion
 - English task → English discussion
-- Role names and emojis remain in Chinese (they're character names from Chinese literature)
+- Role names are Greek mythology characters (Momus/Cassandra/Athena/Hephaestus); legacy Chinese aliases (sunwukong/lindaiyu/zhugeliang/wangxifeng) remain supported
 
 ## License
 
