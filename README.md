@@ -26,7 +26,7 @@ In Claude Code, run the following commands:
 /plugin marketplace add ClaudeWorksHub/claude-plugins
 
 # 2. Install plugin
-/plugin install huashanlunjian@claudeworkshub
+/plugin install symposion@claudeworkshub
 
 # 3. Activate
 /reload-plugins
@@ -36,16 +36,16 @@ To update to the latest version:
 
 ```bash
 /plugin marketplace update claudeworkshub
-/plugin install huashanlunjian@claudeworkshub
+/plugin install symposion@claudeworkshub
 /reload-plugins
 ```
 
 ### Local development
 
-Copy the `huashanlunjian/` directory to `~/.claude/plugins/`:
+Copy the `symposion/` directory to `~/.claude/plugins/`:
 
 ```bash
-cp -r huashanlunjian ~/.claude/plugins/
+cp -r symposion ~/.claude/plugins/
 ```
 
 Or configure the plugin path in your project's `.claude/settings.local.json`.
