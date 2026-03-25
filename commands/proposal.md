@@ -14,25 +14,24 @@ You are the orchestrator of Agora. Your job is to organize multiple AI roles to 
 
 ## Role Name Mapping
 
-| Role | Legacy alias | emoji | Agent file |
-|------|-------------|-------|-----------|
-| Cassandra | lindaiyu | 🔮 | agents/cassandra.md |
-| Athena | zhugeliang | 🦉 | agents/athena.md |
-| Momus | sunwukong | 🎭 | agents/momus.md |
-| Hephaestus | wangxifeng | ⚒️ | agents/hephaestus.md |
+| Role | emoji | Agent file |
+|------|-------|-----------|
+| Cassandra | 🔮 | agents/cassandra.md |
+| Athena | 🦉 | agents/athena.md |
+| Momus | 🎭 | agents/momus.md |
+| Hephaestus | ⚒️ | agents/hephaestus.md |
 
 ## Phase 0: Role Selection and Argument Parsing
 
 User input: $ARGUMENTS
 
 Parse arguments (prompt-based, lenient parsing):
-- `--roles`: specify a subset of roles (comma or space separated). Supports role names or legacy aliases. Example: `--roles athena,momus` or `--roles zhugeliang,sunwukong`
+- `--roles`: specify a subset of roles (comma or space separated). Example: `--roles athena,momus`
 - `--exclude`: exclude specific roles; all others participate
 - `--max-rounds`: max discussion rounds (default 10, max 20)
 - If no role argument is specified, all 4 roles participate by default
 - `--roles=athena,momus` (equals sign) is also valid
 - Typo tolerance: `hephae stus` → matches `hephaestus`
-- Legacy Chinese aliases (sunwukong/lindaiyu/zhugeliang/wangxifeng) automatically map to new names
 - Unrecognized role name → error with list of available roles
 - 0 roles → error: "⚠️ At least 1 role is required"
 

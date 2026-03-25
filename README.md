@@ -86,18 +86,18 @@ Or configure the plugin path in your project's `.claude/settings.local.json`.
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `--roles` | All 4 roles | Comma-separated role names (or legacy aliases) |
+| `--roles` | All 4 roles | Comma-separated role names |
 | `--exclude` | None | Exclude specific roles |
 | `--max-rounds` | 10 | Max discussion rounds (1-20) |
 
 ### Role names
 
-| Name | Legacy alias | Perspective |
-|------|-------------|-------------|
-| `momus` | `sunwukong` | Devil's advocate |
-| `cassandra` | `lindaiyu` | Detail & edge cases |
-| `athena` | `zhugeliang` | Strategy & architecture |
-| `hephaestus` | `wangxifeng` | Execution & feasibility |
+| Name | Perspective |
+|------|-------------|
+| `momus` | Devil's advocate |
+| `cassandra` | Detail & edge cases |
+| `athena` | Strategy & architecture |
+| `hephaestus` | Execution & feasibility |
 
 ## Output
 
@@ -151,7 +151,7 @@ Ships with 4 built-in roles. The format is open for future custom roles:
 
 ## Discussion language
 
-Discussions follow the language of your task description — English task gives English discussion, etc. Role names are Greek mythology characters (Momus/Cassandra/Athena/Hephaestus); legacy aliases (sunwukong/lindaiyu/zhugeliang/wangxifeng) remain supported.
+Discussions follow the language of your task description — English task gives English discussion, etc. Role names are Greek mythology characters (Momus/Cassandra/Athena/Hephaestus).
 
 ## License
 
