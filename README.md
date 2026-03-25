@@ -55,31 +55,31 @@ Or configure the plugin path in your project's `.claude/settings.local.json`.
 ### Basic
 
 ```
-/proposal Design a user authentication system
+/symposion:proposal Design a user authentication system
 ```
 
 ### Select roles
 
 ```
-/proposal --roles athena,momus Design a caching system
+/symposion:proposal --roles athena,momus Design a caching system
 ```
 
 ### Exclude roles
 
 ```
-/proposal --exclude hephaestus Design a notification system
+/symposion:proposal --exclude hephaestus Design a notification system
 ```
 
 ### Set max rounds
 
 ```
-/proposal --max-rounds 5 Design a notification system
+/symposion:proposal --max-rounds 5 Design a notification system
 ```
 
 ### Combined
 
 ```
-/proposal --roles cassandra,athena --max-rounds 8 Design an API gateway
+/symposion:proposal --roles cassandra,athena --max-rounds 8 Design an API gateway
 ```
 
 ## Parameters
