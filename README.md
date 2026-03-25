@@ -1,8 +1,6 @@
-# 华山论剑 / Huashan Lunjian
+# Symposion
 
 > Multi-AI role debate plugin for Claude Code — generate high-quality proposals through structured multi-perspective discussion.
-
-多AI角色讨论插件 — 通过多角色结构化辩论，生成高质量 Proposal。
 
 ## Overview / 概述
 
