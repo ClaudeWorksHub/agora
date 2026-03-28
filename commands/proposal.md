@@ -341,10 +341,15 @@ b) Compose the full prompt (role system prompt + review rules injected by orches
 
 ## Review Rules
 
-- Every response MUST start with `## Status: Objection` or `## Status: No objection`
-- When objecting, list numbered issues (issue description + why it matters + suggested direction)
-- Critiques must be specific — no vague generalities
-- Do not object for the sake of objecting — if resolved, clearly say so
+- When objecting, list numbered issues. Each issue MUST have: a severity tag `[CRITICAL]`, `[MAJOR]`, or `[MINOR]` + issue description + why it matters + suggested fix direction
+  - `[CRITICAL]`: blocks execution, must be fixed before proceeding
+  - `[MAJOR]`: causes significant rework if ignored
+  - `[MINOR]`: suboptimal but functional, or stylistic preference
+- CRITICAL and MAJOR issues MUST include evidence: file path + line number, or backtick-quoted excerpt from the proposal. Issues without evidence are opinions, not findings
+- After drafting your objections, self-audit: for each CRITICAL/MAJOR finding, tag confidence as `[HIGH]` or `[MEDIUM]`
+- For CRITICAL findings, apply a realist check before finalizing your Status: What is the realistic worst case? Are there mitigating factors? If mitigated, downgrade to MAJOR with a "Mitigated by: ..." note. Never downgrade findings involving data loss, security breach, or financial impact
+- Now determine your Status: Every response MUST start with `## Status: Objection` or `## Status: No objection`. A response containing any [CRITICAL] issue MUST use Objection
+- Critiques must be specific — no vague generalities. Do not object for the sake of objecting — if resolved, clearly say so
 - End every response with `## Key Points:` (3-5 bullet points) and `## Summary: <one sentence>`
 - Do NOT use markdown headings (`#`/`##`/`###`) in the body — only `## Status:`, `## Key Points:`, and `## Summary:` are allowed as headings
 - You are a subagent. You cannot use AskUserQuestion. You must complete the review independently and make your own judgments.
@@ -402,6 +407,7 @@ a) **Parse first** (based on Agent's raw response, not file content):
    - Missing key points → use the objection list from the response
    - Missing summary → use first 100 chars of response
    - If a role marks "No objection" but the response contains actionable change requests (e.g. "应该改为"/"must fix"/"should change to"/"需要修改"), flag as "⚠️ soft objection" in progress output
+   - If a role marks "No objection" but the response contains `[CRITICAL]` tags, override status to "Objection" and flag as "⚠️ CRITICAL found but Status was No objection — overridden to Objection"
 
 b) **Write to discussion file** using the Edit tool to append at the end of the file. Find the last line of the file and append after it. Content to append:
 
@@ -452,6 +458,8 @@ a) Respond to each objection one by one (accept/reject with reasoning), and revi
    - If the same objection appeared in a previous round → mark "Already addressed in Round N" and reference the prior response
    - Do not accept everything wholesale — evaluate each objection independently
    - Do not give dismissive responses — every objection deserves a specific reply
+   - Prioritize CRITICAL issues first, then MAJOR, then MINOR. MINOR issues may be acknowledged briefly without detailed response
+   - For MEDIUM-confidence MAJOR findings, the orchestrator may defer judgment to the next round — note as "Deferred: awaiting additional evidence" rather than accepting or rejecting immediately
 
 b) **If the proposal involves modifying code files (such as the proposal.md itself or agent files), accepted changes must be immediately applied to the actual files.**
 
