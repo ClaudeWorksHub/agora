@@ -1,0 +1,9 @@
+{
+  "name": "agora",
+  "description": "Multi-AI role debate plugin for generating high-quality proposals. Multiple AI roles independently explore code and debate from different perspectives until consensus is reached.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Mark",
+    "email": "sunfjun@gmail.com"
+  }
+}
